@@ -18,15 +18,31 @@ void main() {
 class DicePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(
-          child: Image.asset('images/dice1.png'),
-        ),
-        Expanded(
-          child: Image.asset('images/dice1.png'),
-        ),
-      ],
+    var leftDiceNumber = 5;
+
+    return Center(
+      child: Row(
+        children: [
+          Expanded(
+            // ignore: deprecated_member_use
+            child: FlatButton(
+              onPressed: () {
+                print('Left button got pressed');
+              },
+              child: Image.asset('images/dice$leftDiceNumber.png'),
+            ),
+          ),
+          Expanded(
+            // ignore: deprecated_member_use
+            child: FlatButton(
+              onPressed: () {
+                print('Right button got pressed');
+              },
+              child: Image.asset('images/dice1.png'),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
